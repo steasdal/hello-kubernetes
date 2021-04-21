@@ -11,6 +11,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: {{- include "hello-kubernetes.labels" . | nindent 4 }}
+                name:
+                  {{- include "hello-kubernetes.labels" . | nindent 4 }}
                 port:
                   number: {{ .Values.service.port }}
