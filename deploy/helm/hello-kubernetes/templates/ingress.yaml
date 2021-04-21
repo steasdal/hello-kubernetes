@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ include "hello-kubernetes.name" . }}
@@ -7,7 +7,10 @@ spec:
     - host: {{ .Values.ingress.hostPath }}
       http:
         paths:
-          - path: /
+          - pathType: Prefix
+            path: "/"
             backend:
-              serviceName: {{- include "hello-kubernetes.labels" . | nindent 4 }}
-              servicePort: {{ .Values.service.port }}
+              service:
+                name: {{- include "hello-kubernetes.labels" . | nindent 4 }}
+                port:
+                  number: {{ .Values.service.port }}
