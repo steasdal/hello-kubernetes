@@ -6,9 +6,10 @@ ingress:
   configured: false
   rewritePath: true
   pathPrefix: ""
+  path: "hello.teasdale.link"
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 80
 
 deployment:
