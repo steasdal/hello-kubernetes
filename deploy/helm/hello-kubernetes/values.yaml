@@ -6,7 +6,7 @@ ingress:
   configured: false
   rewritePath: true
   pathPrefix: ""
-  path: "hello.teasdale.link"
+  hostPath: "hello.teasdale.link"
 
 service:
   type: ClusterIP

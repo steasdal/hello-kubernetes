@@ -4,7 +4,7 @@ metadata:
   name: {{ include "hello-kubernetes.name" . }}
 spec:
   rules:
-    - host: {{ .Values.ingress.path }}
+    - host: {{ .Values.ingress.hostPath }}
       http:
         paths:
           - path: /
