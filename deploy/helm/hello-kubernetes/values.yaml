@@ -1,12 +1,13 @@
 # Provide a custom message
-message: "Hello from teasdale.link!"
+message: "Hello Kubernetes!"
 
 # Remember to set service.type=ClusterIP if you are using an ingress
 ingress:
   configured: false
   rewritePath: true
   pathPrefix: ""
-  hostPath: "hello.teasdale.link"
+  hostPath: ""
+#  hostPath: "hello.teasdale.link"
 
 service:
   type: ClusterIP
